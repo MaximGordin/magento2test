@@ -1,0 +1,22 @@
+
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('TestSlider')->toHtml();?>
+<script>
+    require([
+            "jquery",
+            "slick"
+        ],
+        function($) {
+            "use strict";
+
+            $(document).ready(function($ ){
+                $(".my-list").slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                });
+            });
+            return;
+        });
+</script>

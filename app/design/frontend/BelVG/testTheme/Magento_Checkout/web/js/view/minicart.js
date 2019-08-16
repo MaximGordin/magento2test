@@ -5,6 +5,7 @@
 
 define([
     'uiComponent',
+    'Magento_Catalog/js/price-utils',
     'Magento_Customer/js/customer-data',
     'jquery',
     'ko',
@@ -12,7 +13,7 @@ define([
     'sidebar',
     'mage/translate',
     'mage/dropdown'
-], function (Component, customerData, $, ko, _) {
+], function (Component, priceUtils, customerData, $, ko, _) {
     'use strict';
 
 
@@ -195,6 +196,14 @@ define([
             var items = this.getCartParam('items') || [];
 
             return parseInt(items.length, 10);
+        },
+
+        /**
+         * @param {*} price
+         * @return {*|String}
+         */
+        getFormattedPrice: function (price) {
+            return priceUtils.formatPrice(price, {decimalSymbol: ".",groupLength: 3,groupSymbol: ",",integerRequired: false,pattern: "$%s",precision: 2,requiredPrecision: 2});
         }
     });
 });

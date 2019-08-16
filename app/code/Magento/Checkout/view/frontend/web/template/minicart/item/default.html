@@ -9,7 +9,7 @@
         <!-- ko if: product_has_url -->
         <a data-bind="attr: {href: product_url, title: product_name}" tabindex="-1" class="product-item-photo">
             <!-- ko foreach: $parent.getRegion('itemImage') -->
-                <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
+                <!-- ko template: {name: getTemplate(), data: <?php $this->helper('Magento\Framework\Pricing\Helper\Data')->currency(number_format(50,2),true,false) ?>} --><!-- /ko -->
             <!-- /ko -->
         </a>
         <!-- /ko -->

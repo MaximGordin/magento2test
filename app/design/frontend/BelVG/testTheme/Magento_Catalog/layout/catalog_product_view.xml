@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block after="-" class="Magento\Catalog\Block\Product\View" name="deliveryinfo.tab" as="deliveryinfo" template="product/delivery_info.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">New Test Tab</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <move element="product.info.price" destination="product.info.options.wrapper.bottom"/>
+        <move element="product.info.review" destination="product.info.main" after="page.main.title"/>
+    </body>
+</page>

@@ -19,7 +19,7 @@ define([
         productId: null,
         priceConfig: null,
         prices: {},
-        priceTemplate: '<span class="price"><%- data.formatted %></span>'
+        priceTemplate: '<span class="price1"><%- data.formatted %></span>'
     };
 
     $.widget('mage.priceBox', {
